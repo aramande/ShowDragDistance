@@ -18,5 +18,7 @@
 	"ShowDragDistance.maxSpeedColor-s": "Color de Velocidad Máxima",
 	"ShowDragDistance.maxSpeedColor-l":"Establezca el color que se debe mostrar cuando el jugador excede su velocidad de movimiento.",
 	"ShowDragDistance.dashSpeedColor-s":"Color de Velocidad de Carrera",
-	"ShowDragDistance.dashSpeedColor-l":"Establezca el color al mostrar la Velocidad de Carrera del icono."
+	"ShowDragDistance.dashSpeedColor-l":"Establezca el color al mostrar la Velocidad de Carrera del icono.",
+	"ShowDragDistance.dash2SpeedColor-s":"Color de Velocidad de Carrera (2)",
+	"ShowDragDistance.dash2SpeedColor-l":"Establezca el color al mostrar la Velocidad de Carrera del icono."
 }

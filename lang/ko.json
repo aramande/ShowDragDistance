@@ -17,5 +17,7 @@
 	"ShowDragDistance.maxSpeedColor-s": "최대 속도 색상",
 	"ShowDragDistance.maxSpeedColor-l":"이동 속도를 초과한 경우 표시할 색상을 입력한다.",
 	"ShowDragDistance.dashSpeedColor-s":"질주 속도 색상",
-	"ShowDragDistance.dashSpeedColor-l":"토큰의 질주 이동을 나타내는 색상이다."
+	"ShowDragDistance.dashSpeedColor-l":"토큰의 질주 이동을 나타내는 색상이다.",
+	"ShowDragDistance.dash2SpeedColor-s":"질주 속도 색상 (2)",
+	"ShowDragDistance.dash2SpeedColor-l":"토큰의 질주 이동을 나타내는 색상이다."
 }

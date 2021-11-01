@@ -18,5 +18,7 @@
 	"ShowDragDistance.maxSpeedColor-s": "Max Speed Color",
 	"ShowDragDistance.maxSpeedColor-l":"Enter the color to show when player has exceeded their movement speed.",
 	"ShowDragDistance.dashSpeedColor-s":"Dash Speed Color",
-	"ShowDragDistance.dashSpeedColor-l":"The color shown to indicate a token's dash movement."
+	"ShowDragDistance.dashSpeedColor-l":"The color shown to indicate a token's dash movement.",
+	"ShowDragDistance.dash2SpeedColor-s":"Secondary Dash Speed Color",
+	"ShowDragDistance.dash2SpeedColor-l":"The color shown to indicate a token's second dash movement."
 }

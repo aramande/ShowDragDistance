@@ -54,7 +54,7 @@
           flaggedSpeed,
           token.document.getFlag(VTT_MODULE_NAME, 'speed') || {}
       );
-      const normalSpeed = baseSpeed + flaggedSpeed.normal;
+      const normalSpeed = (baseSpeed || 0) + flaggedSpeed.normal + (bonusSpeed || 0);
       const dashSpeed =
           (normalSpeed + flaggedSpeed.dash) *
           game.settings.get(VTT_MODULE_NAME, 'dashX');
@@ -238,22 +238,26 @@
           this.tokenSpeed.normal != null ? this.tokenSpeed.normal : null;
       let dashSpeed =
           this.tokenSpeed.dash !== null ? this.tokenSpeed.dash : null;
-      let maxSpeed = remainingSpeed;
       let color = this.color;
 
       for (let i = 0; i < line.length; i++) {
         if (line[i].travelled > remainingSpeed) {
           if (
               game.settings.get(VTT_MODULE_NAME, 'dash') &&
-              line[i].travelled < remainingSpeed + maxSpeed
+              line[i].travelled <= remainingSpeed * 2
           ) {
             color = colorStringToHex(
                 game.settings.get(VTT_MODULE_NAME, 'dashSpeedColor')
             );
           } else if (
-              game.settings.get(VTT_MODULE_NAME, 'dash') == false ||
-              line[i].travelled > remainingSpeed + maxSpeed
+            game.settings.get(VTT_MODULE_NAME, 'dash') &&
+            game.system.id == 'pf2e' &&
+            line[i].travelled <= remainingSpeed * 3
           ) {
+            color = colorStringToHex(
+                game.settings.get(VTT_MODULE_NAME, 'dash2SpeedColor')
+            );
+          } else {
             color = colorStringToHex(
                 game.settings.get(VTT_MODULE_NAME, 'maxSpeedColor')
             );
@@ -491,6 +495,16 @@
         type: String
         //onChange: x => window.location.reload()
       });
+      if(game.system.id == 'pf2e'){
+    		game.settings.register('ShowDragDistance', 'dash2SpeedColor', {
+    			name: "ShowDragDistance.dash2SpeedColor-s",
+    			hint: "ShowDragDistance.dash2SpeedColor-l",
+    			scope: "client",
+    			config: true,
+    			default: '#FFFF00',
+    			type: String
+        });
+      }
       // game.settings.register(VTT_MODULE_NAME, 'showPathDefault', {
       //    name: "ShowDragDistance.showPath-s",
       //    hint: "ShowDragDistance.showPath-l",
