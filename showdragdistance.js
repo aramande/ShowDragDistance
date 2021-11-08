@@ -143,8 +143,8 @@
 
         let line;
         let ignoreTerrain =
-            typeof this.getToken.ignoreTerrain != 'undefined' &&
-            this.getToken.ignoreTerrain != null
+            this.getToken?.ignoreTerrain !== undefined &&
+            this.getToken.ignoreTerrain !== null
                 ? this.getToken.ignoreTerrain
                 : false;
         if (canvas.grid.type > 1) {
